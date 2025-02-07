@@ -15,6 +15,7 @@ args = parser.parse_args()
 
 # Replace when appropriate or use a stub
 # Consider switching out for some other LLM or building my own...or using the model locally
+# TODO ensure computation is offloded to GPU
 llm = OpenAI()
 
 code_prompt = PromptTemplate(
