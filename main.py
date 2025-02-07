@@ -32,7 +32,7 @@ code_chain = LLMChain(
     prompt=code_prompt,
     output_key="code"
 )
-#TODO refactor this out of here
+# TODO refactor this out of here
 test_chain = LLMChain(
     llm=llm,
     prompt=test_prompt,
@@ -45,15 +45,7 @@ chain = SequentialChain(
     output_variables=["test", "code"]
 )
 
-result = code_chain({
-    "language": args.language,
-    "task": args.task
-})
-
-print(result["text"])
-
-print(">>>>>> GENERATED CODE:")
-print(result["code"])
-
-print(">>>>>> GENERATED TEST:")
-print(result["test"])
+# Test the model
+prompt = "Tell us a joke"
+response = llm.invoke(prompt)
+print(response)
